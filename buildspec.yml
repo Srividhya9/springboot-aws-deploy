@@ -15,7 +15,7 @@ phases:
       - echo building the Jar file
       #- mvn clean install
       - echo Building the Docker image...
-      - docker build -t 302263067633.dkr.ecr.ap-southeast-2.amazonaws.com/spring-demo-ecr:latest .
+      - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
